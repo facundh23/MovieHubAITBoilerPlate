@@ -1,48 +1,40 @@
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 
 dotenv.config();
 
-type TConfig = {
-  [key: string]: EnviromentConfig;
-};
-
-type EnviromentConfig = {
-  app: AppConfig;
-  auth0?: Auth0Config;
-};
-
-type AppConfig = {
-  PORT: string | number;
-};
-
-type Auth0Config = {
-  client_origin: string | undefined;
-  audience: string | undefined;
-  issuer: string | undefined;
-};
-
-if (process.env.NODE_ENV === "production") {
-  dotenv.config({ path: ".env" });
-} else {
-  dotenv.config({ path: ".env" });
-}
-
 const ENV = process.env.NODE_ENV ?? "development";
 
-const CONFIG: TConfig = {
+const CONFIG = {
   development: {
     app: {
       PORT: process.env.PORT || 3000,
+      ORIGIN: process.env.APP_ORIGIN,
     },
     auth0: {
       client_origin: process.env.APP_ORIGIN,
       audience: process.env.AUTH0_AUDIENCE,
       issuer: process.env.AUTH0_ISSUER,
     },
+    cloudinary: {
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: process.env.CLOUDINARY_API_KEY,
+      api_secret: process.env.CLOUDINARY_API_SECRET,
+    },
   },
   production: {
     app: {
-      PORT: process.env.PORT || 4001,
+      PORT: process.env.PORT || 3000,
+      ORIGIN: process.env.APP_ORIGIN,
+    },
+    auth0: {
+      client_origin: process.env.APP_ORIGIN,
+      audience: process.env.AUTH0_AUDIENCE,
+      issuer: process.env.AUTH0_ISSUER,
+    },
+    cloudinary: {
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: process.env.CLOUDINARY_API_KEY,
+      api_secret: process.env.CLOUDINARY_API_SECRET,
     },
   },
 };
