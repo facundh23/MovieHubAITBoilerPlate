@@ -24,7 +24,7 @@ app.use((0, express_fileupload_1.default)({
     tempFileDir: "./uploads",
     abortOnLimit: true,
 }));
-app.use("/", auth_routes_1.default);
+app.use("/auth", auth_routes_1.default);
 app.use("/users", user_routes_1.default);
 app.use("/home", movies_routes_1.default);
 app.use("/genres", genre_routes_1.default);
