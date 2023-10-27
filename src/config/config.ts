@@ -22,9 +22,9 @@ type Auth0Config = {
 };
 
 if (process.env.NODE_ENV === "production") {
-  dotenv.config({ path: ".env.production" });
+  dotenv.config({ path: ".env" });
 } else {
-  dotenv.config({ path: ".env.development" });
+  dotenv.config({ path: ".env" });
 }
 
 const ENV = process.env.NODE_ENV ?? "development";
