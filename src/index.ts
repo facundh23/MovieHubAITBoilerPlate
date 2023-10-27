@@ -1,9 +1,8 @@
-import config from './config/config';
-import app from './server';
+import config from "./config/config";
+import app from "./server";
 
-
-const PORT: string | number = config.app.PORT
+const PORT = config.app.PORT;
 
 app.listen(PORT, (): void => {
-    console.log(`Server Running on port ${PORT}`);
-})
+  console.log(`Server Running on port ${PORT}`);
+});
