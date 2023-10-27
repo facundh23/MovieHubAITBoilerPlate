@@ -6,7 +6,6 @@ import {
   signUp,
   updateUser,
 } from "../../controller/user/user.controller";
-import { checkJwtMiddleware } from "../../middlewares/checkJwtmiddleware";
 
 const userRoutes: Router = Router();
 
@@ -14,7 +13,7 @@ userRoutes
   .get("/", getAllUsers)
   .get("/:userId", getUserById)
   .put("/:email", updateUser)
-  .delete("/:userId", checkJwtMiddleware, deleteUser)
+  .delete("/:userId", deleteUser)
   .post("/", signUp);
 
 export default userRoutes;

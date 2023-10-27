@@ -5,7 +5,6 @@ import {
   deleteGenreById,
   generatorGenre,
 } from "../../controller/genre/genre.controller";
-import { checkJwtMiddleware } from "../../middlewares/checkJwtmiddleware";
 
 const genreRoutes: Router = Router();
 

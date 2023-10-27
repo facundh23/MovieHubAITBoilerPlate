@@ -6,7 +6,6 @@ import {
   updateMovie,
   createMovie,
 } from "../../controller/movies/movie.controller";
-import { checkJwtMiddleware } from "../../middlewares/checkJwtmiddleware";
 
 const moviesRoutes: Router = Router();
 
