@@ -28,4 +28,7 @@ app.use("/", auth_routes_1.default);
 app.use("/users", user_routes_1.default);
 app.use("/home", movies_routes_1.default);
 app.use("/genres", genre_routes_1.default);
+app.get("/", (req, res) => {
+    res.status(200).json({ message: "Welcome to the API World" });
+});
 exports.default = app;
