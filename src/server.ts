@@ -27,7 +27,7 @@ app.use(
   })
 );
 
-app.use("/auth", authRoutes);
+app.use("/", authRoutes);
 app.use("/users", userRoutes);
 app.use("/home", moviesRoutes);
 app.use("/genres", genreRoutes);
